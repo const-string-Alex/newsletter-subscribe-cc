@@ -1,0 +1,14 @@
+.subscribed-main {
+  padding: 2rem;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 47px;
+}
+
+@media (min-width: 820px) {
+  .subscribed-main {
+    width: 504px;
+    height: 520px;
+    margin: auto;
+  }
+}

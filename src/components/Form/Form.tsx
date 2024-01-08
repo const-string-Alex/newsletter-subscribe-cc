@@ -7,7 +7,6 @@ type TFormData = {
 
 function Form() {
   const [formData, setFormData] = useState<TFormData>({ email: "" });
-  // console.log(formData);
 
   function handleFormData(event: ChangeEvent<HTMLInputElement>) {
     event.preventDefault();

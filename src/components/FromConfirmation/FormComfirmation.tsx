@@ -1,0 +1,25 @@
+import "./form-confirmation.css";
+
+function FormComfirmation() {
+  function handleDismissClick(): void {
+    window.location.href = "/";
+  }
+
+  return (
+    <>
+      <div className="confirmation">
+        <i className="fa-solid fa-circle-check checkmark"></i>
+        <h1 className="confirmation-title">Thanks for subscribing!</h1>
+        <p className="confirmation-description">
+          A confirmation email has been sent to ash@loremcompany.com. Please
+          open it and click the button inside to confirm your subscription
+        </p>
+      </div>
+      <button className="dismiss-btn" onClick={handleDismissClick}>
+        Dismiss message
+      </button>
+    </>
+  );
+}
+
+export default FormComfirmation;
