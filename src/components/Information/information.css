@@ -27,3 +27,18 @@
 .checkmark {
   color: #ff6155;
 }
+
+@media (min-width: 820px) {
+  .info {
+    width: 376px;
+  }
+
+  .info-title {
+    font-size: 3.25rem;
+  }
+
+  .info-list-header,
+  .info-list-item {
+    font-size: 1rem;
+  }
+}

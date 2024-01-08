@@ -1,3 +1,9 @@
 .newsletter-graphic {
   width: 100%;
 }
+
+@media (min-width: 820px) {
+  .newsletter-graphic {
+    padding: 1rem;
+  }
+}

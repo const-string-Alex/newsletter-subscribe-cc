@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { type ChangeEvent, type FormEvent, useState } from "react";
 import "./form.css";
 
 type TFormData = {
@@ -21,8 +21,14 @@ function Form() {
     });
   }
 
+  function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    window.location.href = "/subscribed";
+  }
+
   return (
-    <form className="subscribe-form">
+    <form onSubmit={handleFormSubmit} className="subscribe-form">
       <label htmlFor="email">Email address</label>
       <input
         type="text"

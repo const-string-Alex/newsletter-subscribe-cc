@@ -1,0 +1,9 @@
+@media (min-width: 820px) {
+  .newsletter-main {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+  }
+}

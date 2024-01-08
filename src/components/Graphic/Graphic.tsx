@@ -6,7 +6,7 @@ import desktopGraphic from "/illustration-sign-up-desktop.svg";
 
 function Graphic() {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
-  const desktopWidth: number = 768;
+  const desktopWidth: number = 820;
   const [displayImg, setDisplayImg] = useState<string>("");
 
   useEffect(() => {
