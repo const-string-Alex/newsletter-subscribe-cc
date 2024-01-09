@@ -32,6 +32,7 @@
   }
 
   .confirmation-description {
+    font-size: 1.15rem;
     margin-bottom: 2rem;
   }
 }

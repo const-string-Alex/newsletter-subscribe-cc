@@ -7,6 +7,7 @@ type TFormData = {
 
 function Form() {
   const [formData, setFormData] = useState<TFormData>({ email: "" });
+  const [invalidEmail, setInvalidEmail] = useState<boolean>(false);
 
   function handleFormData(event: ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
@@ -20,15 +21,31 @@ function Form() {
     });
   }
 
+  function isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
   function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    window.location.href = "/subscribed";
+    if (isValidEmail(formData.email)) {
+      window.location.href = "/subscribed";
+    } else {
+      setInvalidEmail(true);
+    }
   }
 
   return (
     <form onSubmit={handleFormSubmit} className="subscribe-form">
-      <label htmlFor="email">Email address</label>
+      <div className="label-container">
+        <label htmlFor="email">Email address</label>
+        {invalidEmail ? (
+          <p className="invalid-email-label">Valid email required</p>
+        ) : (
+          ""
+        )}
+      </div>
       <input
         type="text"
         placeholder="email@company.com"
@@ -36,6 +53,7 @@ function Form() {
         name="email"
         value={formData.email}
         onChange={handleFormData}
+        className={invalidEmail ? "invalid-email" : "input-email"}
       />
       <button>Subscribe to monthly newsletter</button>
     </form>

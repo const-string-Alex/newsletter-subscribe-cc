@@ -3,10 +3,19 @@
   padding: 0 1rem;
 }
 
-.subscribe-form label {
-  font-weight: 700;
-  display: block;
+.label-container {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
+}
+
+.subscribe-form label,
+.invalid-email-label {
+  font-weight: 700;
+}
+
+.invalid-email-label {
+  color: #ff6155;
 }
 
 .subscribe-form input,
@@ -16,8 +25,12 @@
   border-radius: 0.5rem;
 }
 
-.subscribe-form input {
+.input-email {
   border: 1px solid rgb(199, 199, 199);
+}
+.invalid-email {
+  border: 1px solid #ff5145;
+  background-color: #ffdfdd;
 }
 
 .subscribe-form button {
